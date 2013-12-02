@@ -116,9 +116,10 @@ textarea {
     border-radius: 10px;
     margin: 10px 0;
     padding: 0 10px;
+    cursor: pointer;
 }
 
-.button:hover {
+.button:active {
     background-color: #1616cb;
 }
 
@@ -143,6 +144,10 @@ textarea {
     box-shadow: 0 0 20px #000;
 }
 
+.screen .title {
+    display: none;
+}
+
 .screen .inner {
     margin-top: 50px;
 }
@@ -154,6 +159,25 @@ textarea {
     
 }
 
+.top-button {
+    position: absolute;
+    width: 100px;
+}
+.top-title {
+    position: absolute;
+    right: 0;
+    left: 130px;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+    
+
+.topper-table {
+    text-align: center;
+    width: 100%;
+}
 
 
 

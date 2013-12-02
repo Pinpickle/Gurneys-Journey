@@ -22,26 +22,51 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="top-bar"><a onclick="loadScreen('home')">GO HOME</a> Gurney Town</div>
+        <div class="top-bar">
+            <div class="button top-button" onclick="loadScreen('home')">Home</div>
+            <div class="top-title">Gurney's Journey</div>
+        </div>
         <div class="screen-cont">
+            
+            
             <div class="screen on" id="screen-home">
+                <div class="title">Gurney's Journey</div>
                 <div class="inner">
                     <div onclick="loadScreen('tips')" class="button">Helpful Tips</div>
                     <div onclick="phraseBuilder('starters', '', true); loadScreen('builder')" class="button">Phrasebuilder</div>
-                    <div class="button">Sight Seeing</div>
+                    <div class="button" onclick="loadScreen('sights');">Sight Seeing</div>
                     <div class="button" onclick="generateVocabList()">Vocab</div>
                 </div>
             </div>
+            <div class="screen" id="screen-sights">
+                <div class="title">Sightseeing</div>
+                <div class="inner">
+                    <table class="topper-table">
+                        <tr>
+                            <td>Madrid</td>
+                            <td>Barcelona</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             <div class="screen" id="screen-tips">
+                <div class="title">Helpful Tips</div>
                 <div class="inner">
                     <p>Yo</p>
                 </div>
             </div>
             <div class="screen" id="screen-builder">
+                <div class="title">Phrase Builder</div>
                 <div class="inner">
                 </div>
             </div>
             <div class="screen" id="screen-vocab">
+                <div class="title">Vocab</div>
+                <div class="inner">
+                </div>
+            </div>
+            <div class="screen" id="screen-vocab-desc">
+                <div class="title">Word Profile</div>
                 <div class="inner">
                 </div>
             </div>

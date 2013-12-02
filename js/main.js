@@ -259,7 +259,7 @@ function generateVocabList(tag) {
     var word;
     
     for (var i in vocab) {
-        var elem = $("<div></div>");
+        var elem = $("<div class='button'></div>");
         word = vocab[i];
         if (tag != "") {
             var match = false;
@@ -273,12 +273,24 @@ function generateVocabList(tag) {
             
         }
         
-        elem.append(word.english + ":" + word.spanish);
-            
+        elem.append(word.english);
+        elem.data("ind", i);
+        elem.click(onVocabPress);    
+        
         $("#screen-vocab .inner").append(elem);
         
     }
     loadScreen("vocab")
+}
+
+function onVocabPress(event) {
+    var word = vocab[parseInt($(this).data("ind"))];
+    $("#screen-vocab-desc .inner").html("");
+    $("#screen-vocab-desc .inner").append("<p><b>English</b>: " + word.english + "</p>");
+    $("#screen-vocab-desc .inner").append("<p><b>Espanol</b>: " + word.spanish + "</p>");
+    $("#screen-vocab-desc .inner").append("<p>" + word.description + "</p>");
+    
+    loadScreen("vocab-desc");
 }
 
 function loadScreen(pa) {
@@ -286,6 +298,7 @@ function loadScreen(pa) {
     $(".screen.on").addClass("old");
     $("#screen-" + pa).addClass("on").css("z-index", 1).css("left", "100%");
     setTimeout(function() {$("#screen-" + pa).addClass("on").css("left", "0%"); }, 1);
-    setTimeout(function() {$(".screen.on.old").removeClass("on").removeClass("old").css({left: "", "z-index": ""}); $(".screen.on").css({left: ""}); }, 400);
+    setTimeout(function() {$(".screen.on.old").removeClass("on").removeClass("old").css({left: "", "z-index": ""}); $(".screen.on").css({left: ""}); 
+                          $(".top-title").html($(".screen.on .title").html());}, 400);
     //phrases.starters[0].spn;
 }
