@@ -299,6 +299,6 @@ function loadScreen(pa) {
     $("#screen-" + pa).addClass("on").css("z-index", 1).css("left", "100%");
     setTimeout(function() {$("#screen-" + pa).addClass("on").css("left", "0%"); }, 1);
     setTimeout(function() {$(".screen.on.old").removeClass("on").removeClass("old").css({left: "", "z-index": ""}); $(".screen.on").css({left: ""}); 
-                          $(".top-title").html($(".screen.on .title").html());}, 400);
+                          /*$(".top-title").html($(".screen.on .title").html());*/}, 400);
     //phrases.starters[0].spn;
 }
